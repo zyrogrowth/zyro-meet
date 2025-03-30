@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schedule a Meeting | Zyro</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: #0a0a0a;
+            color: white;
+            font-family: Arial, sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+        .container {
+            text-align: center;
+            opacity: 0;
+        }
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        p {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+        .btn {
+            background: #ff6a00;
+            color: white;
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: 0.3s;
+        }
+        .btn:hover {
+            background: #ff4500;
+        }
+        .animation {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #ff6a00, #ff4500);
+            position: absolute;
+            opacity: 0.8;
+            filter: blur(10px);
+            animation: float 3s infinite alternate;
+        }
+        @keyframes float {
+            0% { transform: translateY(0px) translateX(-10px); }
+            100% { transform: translateY(-20px) translateX(10px); }
+        }
+    </style>
+</head>
+<body>
+    <div class="animation" style="top: 20%; left: 15%;"></div>
+    <div class="animation" style="bottom: 20%; right: 15%;"></div>
+    <div class="container">
+        <h1>Schedule a Meeting</h1>
+        <p>Let's grow your fitness brand. Book a session now!</p>
+        <a href="https://calendly.com/zyrocontant/30min" class="btn" target="_blank">Book Now</a>
+    </div>
+    <script>
+        gsap.to(".container", { opacity: 1, duration: 1.5, y: -20, ease: "power3.out" });
+    </script>
+</body>
+</html>
